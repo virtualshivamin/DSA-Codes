@@ -41,29 +41,35 @@ The string s consists of characters '0' and '1' only.
 using namespace std;
 
 
-        int maxScore(string s) {
-            int max = 0;
-            if(s.length() >1 && s.length()<= 500){
-                int zero = 0;
-                int n = s.size();
-                int sum = 0;
-                for(int i = 0; i<n; i++)
-                {
-                    if(s[i]=='0')
-                        zero++;
-                    int one=0;
-                    for(int j=i+1;j<n;j++)
-                    {
-                        if(s[j]=='1')
-                            one++;
-                    }
-                    sum = zero+one;
-                    if(sum>max)
-                        max=sum;
-                }
-            }
-            return max;
+    int maxScore(string s) {
+        int max = 0,l=0;
+        int n = s.size();
+        for(int i=0;i<n;i++)
+        {
+            if( s[i] != '0' && s[i] != '1' )
+                l++;
         }
+        if(s.length() >1 && s.length()<= 500 && l==0){
+            int zero = 0;
+            
+            int sum = 0;
+            for(int i = 0; i<n-1; i++)
+            {
+                if(s[i]=='0')
+                    zero++;
+                int one=0;
+                for(int j=i+1;j<n;j++)
+                {
+                    if(s[j]=='1')
+                        one++;
+                }
+                sum = zero+one;
+                if(sum>max)
+                    max=sum;
+            }
+        }
+        return max;
+    }
     int main()
     {
         cout << maxScore("011101") << endl;

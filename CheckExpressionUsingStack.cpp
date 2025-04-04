@@ -1,6 +1,6 @@
 /*
 
-This program consists of Stack basics push, pop and display operation.
+Check Expression is valid or not using Stack.
 
 Notes: 
 
@@ -22,7 +22,7 @@ using namespace std;
 #define max 5 
 
     int top=-1;
-    int s[max];
+    char s[max];
 
     void push(int a){
         if (top>=max-1){
@@ -61,12 +61,25 @@ using namespace std;
 
 int main(){
 
-    push(10);
-    push(20);
-    push(30);
-    display();
-    pop();
-    display();
+    char arr[] = "{[(a*b)+(c/d)]*e}";
+
+    for(int i = 0; i < sizeof(arr) ; i++)
+    {
+        if(arr[i] == '{' || arr[i] == '(' || arr[i] == '[' )
+            push(arr[i]);
+        else if ( arr[i] == '}' || arr[i] == ']' || arr[i] == ')' )
+            pop();
+        
+        
+            if (top == -1)
+            cout << "Expression is right.";
+        else
+            cout << "Expression is wrong.";
+    }
+    if (top == -1)
+            cout << "Expression is right.";
+        else
+            cout << "Expression is wrong.";
 
     return 0;
 

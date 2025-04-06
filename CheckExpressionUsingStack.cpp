@@ -69,17 +69,13 @@ int main(){
             push(arr[i]);
         else if ( arr[i] == '}' || arr[i] == ']' || arr[i] == ')' )
             pop();
-        
-        
-            if (top == -1)
-            cout << "Expression is right.";
-        else
-            cout << "Expression is wrong.";
+
     }
+
     if (top == -1)
-            cout << "Expression is right.";
-        else
-            cout << "Expression is wrong.";
+        cout << "Expression is right.";
+    else
+        cout << "Expression is wrong.";
 
     return 0;
 

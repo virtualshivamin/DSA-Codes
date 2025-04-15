@@ -1,0 +1,104 @@
+This is notes for complexity. 
+
+
+1. What is Algorithm Complexity?
+
+    Algorithm complexity measures the amount of resources (like time and space) that an algorithm uses as a function of the input size n.
+
+2. Types of Complexity
+
+    a. Time Complexity
+    Measures the execution time as input size grows.
+    Expressed using Big O Notation (O-notation).
+
+    b. Space Complexity
+    Measures the amount of memory used during computation.
+    Includes both input storage and auxiliary space.
+
+3. Some Time Complexity Notations
+
+    O(1) – Constant time
+    O(log n) – Logarithmic time (e.g., Binary Search)
+    O(n) – Linear time (e.g., Traversing array)
+    O(n log n) – Linearithmic (e.g., Merge Sort)
+    O(n²) – Quadratic (e.g., Bubble Sort)
+    O(2ⁿ) – Exponential (e.g., Recursive Fibonacci)
+    O(n!) – Factorial time (e.g., Traveling Salesman brute-force)
+
+4. Best, Average, Worst Cases
+
+    Best Case: Minimum time (e.g., first element in linear search)
+    Average Case: Expected time over all inputs
+    Worst Case: Maximum time (used for upper bound analysis)
+
+5. Space Complexity Breakdown
+
+    Fixed part: Space for constants, simple variables, etc.
+    Variable part: Space for dynamic structures like arrays, recursion stack.
+
+6. Complexity Comparison Table
+
+    Complexity	Growth Rate
+    O(1)	Fastest
+    O(log n)	Very efficient
+    O(n)	Reasonable
+    O(n log n)	Good for sorting
+    O(n²)	Slower for large n
+    O(2ⁿ), O(n!)	Very inefficient
+
+7. How to Analyze Time Complexity
+
+    Count dominant operations in loops/recursion.
+    Ignore constants and low-order terms.
+    Nested loops → Multiply complexities.
+    Sequential statements → Take max complexity.
+
+8. Big O Notation: O(f(n))
+
+    Represents: Upper Bound – the worst-case performance.
+    Meaning: The algorithm will take at most f(n) time/space.
+    Used for: Guaranteeing performance doesn’t exceed a certain level.
+    Formal Definition
+    A function T(n) = O(f(n)) if there exist constants c > 0 and n₀ ≥ 0 such that:
+    T(n) ≤ c * f(n) for all n ≥ n₀.
+    Example
+    If T(n) = 3n + 2, then T(n) = O(n)
+    Because for c = 4, n₀ = 2, we get:
+    3n + 2 ≤ 4n for all n ≥ 2.
+
+9. Theta Notation: Θ(f(n))
+
+    Represents: Tight Bound – the average-case or exact growth.
+    Meaning: The algorithm takes exactly f(n) time/space (up to constants).
+    Used for: When we know both upper and lower bounds match.
+    Formal Definition
+    A function T(n) = Θ(f(n)) if there exist constants c₁, c₂ > 0 and n₀ ≥ 0 such that:
+    c₁ * f(n) ≤ T(n) ≤ c₂ * f(n) for all n ≥ n₀.
+    Example
+    If T(n) = 3n + 2, then T(n) = Θ(n)
+    Because it grows linearly, not faster or slower asymptotically.
+
+10. Omega Notation: Ω(f(n))
+
+    Represents: Lower Bound – the best-case performance.
+    Meaning: The algorithm will take at least f(n) time/space.
+    Used for: Guaranteeing that the algorithm won’t be faster than f(n).
+    Formal Definition
+    A function T(n) = Ω(f(n)) if there exist constants c > 0 and n₀ ≥ 0 such that:
+    T(n) ≥ c * f(n) for all n ≥ n₀.
+    Example
+    If T(n) = 3n + 2, then T(n) = Ω(n)
+    Because for c = 2, n₀ = 2, 3n + 2 ≥ 2n for all n ≥ 2.
+
+
+Summary
+
+Notation	Bound Type	Case	Interpretation
+O(f(n))	Upper Bound	Worst-case	T(n) will not grow faster than f(n)
+Θ(f(n))	Tight Bound	Average	T(n) grows exactly like f(n)
+Ω(f(n))	Lower Bound	Best-case	T(n) grows no slower than f(n)
+Visual Representation (Growth Curves)
+
+Θ(f(n)) —–––> tightly hugs the function from above and below  
+O(f(n)) —–––> stays above the curve, shows ceiling  
+Ω(f(n)) —–––> stays below the curve, shows floor  

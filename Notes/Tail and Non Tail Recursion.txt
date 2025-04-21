@@ -9,6 +9,7 @@ def fib_tail(n,a=0,b=1):
 
 
 ye ek non tail recursive function hai kyuki iss function me "fib_non_tail(n-1) + fib_non_tail(n-2)" is not the last recursive call because inn do functions ke baad ek addition ho raha hai joki last task hai naaki recursiove function, iss liye ye ek not tail function hai.
+
 def fib_non_tail(n):
     if n==0
         return 0

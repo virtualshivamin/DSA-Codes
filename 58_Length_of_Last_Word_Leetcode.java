@@ -43,19 +43,23 @@ class Solution {
         s = s.trim();
         int l = s.lastIndexOf(" ");
         return s.length() - l - 1;
+        /*
 
-        // String str = s, r = "";
-        // str = str.toUpperCase();
-        // int l = str.length();
-        // for(int i = l - 1; i >= 0; i--){
-        //     if(str.charAt(i) == ' ')
-        //         i--;
-        //     else{
-        //         str = str.substring(0, i);
-        //         r = str.substring(str.lastIndexOf(" ") + 1);
-        //     }
-        // }
-        // return r.length();
+        iss method se kar rahe the error aa raha tha bina trim use kiye.
+        
+        String str = s, r = "";
+        str = str.toUpperCase();
+        int l = str.length();
+        for(int i = l - 1; i >= 0; i--){
+            if(str.charAt(i) == ' ')
+                i--;
+            else{
+                str = str.substring(0, i);
+                r = str.substring(str.lastIndexOf(" ") + 1);
+            }
+        }
+        return r.length();
+        */
     }
 
     public static void main(String[] args) {

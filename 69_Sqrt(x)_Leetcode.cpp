@@ -28,3 +28,33 @@ Constraints:
 */
 
 
+#include <iostream>
+using namespace std;
+
+int integerSqrt(int x) {
+    int min = 0;
+    int max = x;
+    long mid;
+    int ans = 0;
+    while (min <= max) {
+        mid = min + (max - min) / 2;
+        if ((mid * mid) > x)
+            max = mid - 1;
+        else {
+            ans = mid;
+            min = mid + 1;
+        }
+    }
+    return ans;
+}
+
+int main() {
+    int x;
+    cout << "Enter a number: ";
+    cin >> x;
+
+    int result = integerSqrt(x);
+    cout << "The integer square root of " << x << " is " << result << endl;
+
+    return 0;
+}

@@ -28,8 +28,26 @@ int main()
     }
 
     cout << "Array after sorting." << endl; 
+
+    for (int i = 0; i < n - 1 ; i++)
+    {
+        int mini = i; 
+        for (int j = i; j < n; j++)
+        {
+            if (a[j] < a[mini])
+            {
+                mini = j;
+            }
+            temp = a[mini];
+            a[mini] = a[i];
+            a[i] = temp;
+        }
+        
+    }
     
-    for (int i = 0; i < n; i++)
+    /* My logic 
+
+    for (int i = 0; i < n ; i++)
     {
         for (int j = 0; j < n; j++)
         {
@@ -42,6 +60,8 @@ int main()
         }
         
     }
+    
+    */
     
     for (int i = 0; i < n; i++)
     {

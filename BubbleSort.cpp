@@ -30,18 +30,16 @@ int main()
     cout << "Array after sorting." << endl; 
 
     // Strivers logic ( Complexity O(n^2) for best, average and worst case ) 
-    for (int i = 0; i < n - 1 ; i++)
+    for (int i = n-1; i >= 0 ; i--)
     {
-        int mini = i; 
-        for (int j = i; j < n; j++)
+        for (int j = 0; j <= i-1 ; j++)
         {
-            if (a[j] < a[mini])
+            if (a[j] > a[j+1])
             {
-                mini = j;
+                temp = a[j+1];
+                a[j+1] = a[j];
+                a[j] = temp;
             }
-            temp = a[mini];
-            a[mini] = a[i];
-            a[i] = temp;
         }
         
     }

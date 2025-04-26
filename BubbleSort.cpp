@@ -29,6 +29,8 @@ int main()
 
     cout << "Array after sorting." << endl; 
 
+    /*
+
     // Strivers logic ( Complexity O(n^2) for best, average and worst case ) 
     for (int i = n-1; i >= 0 ; i--)
     {
@@ -43,24 +45,29 @@ int main()
         }
         
     }
-    
-    /* My logic 
 
-    for (int i = 0; i < n ; i++)
+    */
+
+    // Strivers logic ( Complexity O(n^2) for average and worst case and O(n) for Best case ) 
+    for (int i = n-1; i >= 0 ; i--)
     {
-        for (int j = 0; j < n; j++)
+        int didswap = 0;
+        for (int j = 0; j <= i-1 ; j++)
         {
-            if (a[i] < a[j])
+            if (a[j] > a[j+1])
             {
-                temp = a[i];
-                a[i] = a[j];
+                temp = a[j+1];
+                a[j+1] = a[j];
                 a[j] = temp;
+                ++didswap;
             }
         }
-        
+        // iss case me agar array sorted hai to aage nahi chalega iss se best case ka complexity O(n) rahega
+        if (didswap == 0) 
+        {
+            break;
+        }
     }
-    
-    */
     
     for (int i = 0; i < n; i++)
     {

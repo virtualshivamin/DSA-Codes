@@ -68,7 +68,7 @@ class Train extends Vehicle {
     }
 }
 
-public class Main {
+public class JAVA_Inheritance {
     public static void main(String args[]){
         // Car class ka object car jo ki input dega "Honda" aur "100" 
         Car car = new Car("Honda", 100);

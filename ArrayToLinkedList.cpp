@@ -23,6 +23,7 @@ Node* convertArr2LL(vector<int> &arr) {
     return head;
 }
 
+// Hear i learned how to calculate the length of Linked List
 int LengthOfLL(Node* head){
     int count = 0;
     Node* temp = head;
